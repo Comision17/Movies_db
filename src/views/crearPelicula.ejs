@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear</title>
+</head>
+<body>
+    <h1>Creando pelicula</h1>
+    <form action="" method="post">
+        <div>
+            <label for="title">Titulo de la pelicula</label>
+            <input type="text" name="title" id="title">
+        </div>
+        <div>
+            <label for="rating">Rating de la pelicula</label>
+            <input type="number" name="rating" id="rating">
+        </div>
+        <div>
+            <label for="awards">Premios que ha ganado</label>
+            <input type="number" name="awards" id="awards">
+        </div>
+        <div>
+            <label for="release_date">Fecha de estreno</label>
+            <input type="date" name="release_date" id="release_date">
+        </div>
+        <div>
+            <label for="length">Duracion de la pelicula</label>
+            <input type="number" name="length" id="length">
+        </div>
+        <div>
+            <label for="genero">Genero de la pelicula</label>
+            <select name="genero" id="genero">
+                <option value="" selected hidden>Seleccione un genero</option>
+                <% generos.forEach(genero => { %>
+                    <option value="<%= genero.id %>"><%= genero.name %></option>
+                <% }) %>
+            </select>
+        </div>
+        <div>
+            <button type="submit">Enviar Pelicula</button>
+        </div>
+    </form>
+</body>
+</html>

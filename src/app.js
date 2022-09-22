@@ -8,6 +8,7 @@ const logger = require('morgan');
 const testConection = require('./utils/dbConnectionTest')
 
 const indexRouter = require('./routes/index');
+const adminRouter = require('./routes/admin');
 const actoresRouter = require('./routes/actores');
 const usersRouter = require('./routes/users');
 
@@ -27,6 +28,7 @@ app.use(express.static(path.join(__dirname,'src', 'public')));
 
 app.use('/', indexRouter);
 app.use('/actores', actoresRouter);
+app.use('/admin', adminRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

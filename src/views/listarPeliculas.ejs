@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelis</title>
+</head>
+<body>
+    <h1>Pelis</h1>
+    <a href="/admin/create">
+        <button>crear pelis</button>
+    </a>
+    <ul>
+        <% peliculas.forEach(peli => { %>
+            <li>
+                <a href="/admin/edit/<%= peli.id %> ">
+                <%= peli.title %> 
+                </a>
+                <form action="/admin/destroy/<%= peli.id %>" method="post">
+                    <button type="submit">Eliminar la peli</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>
